@@ -15,6 +15,19 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <style>
+    @keyframes colorChange {
+      0% { color: #2563eb; }
+      25% { color: #dc2626; }
+      50% { color: #16a34a; }
+      75% { color: #ea580c; }
+      100% { color: #2563eb; }
+    }
+    .color-change {
+      animation: colorChange 4s infinite;
+      font-weight: bold;
+    }
+  </style>
 <script>
   window.OneSignalDeferred = window.OneSignalDeferred || [];
   OneSignalDeferred.push(async function(OneSignal) {
@@ -199,6 +212,72 @@
          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl inline-block">
          View All Categories
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- Clients & Certificates Section -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+      <!-- Our Clients -->
+      <div>
+        <h2 class="text-4xl font-bold mb-6 color-change">Our Clients</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          We are happy to meet the premium product sourcing needs of a huge base of business clients spread globally. We cater to diverse industries, delivering top-quality, durable products and top-notch services tailored to meet specific needs.
+        </p>
+        <!-- Clients Grid -->
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Client+1" alt="Client" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Client+2" alt="Client" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Client+3" alt="Client" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Client+4" alt="Client" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Client+5" alt="Client" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Client+6" alt="Client" class="max-w-full h-auto">
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Certificates -->
+      <div>
+        <h2 class="text-4xl font-bold mb-6 color-change">Our Certificates</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          The certificates that we have been endowed with emphasize our focus on quality management and use of top-grade materials, reinforcing trust of our ever-increasing base of customers.
+        </p>
+        <!-- Certificates Grid -->
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Cert+1" alt="Certificate" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Cert+2" alt="Certificate" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Cert+3" alt="Certificate" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Cert+4" alt="Certificate" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Cert+5" alt="Certificate" class="max-w-full h-auto">
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+            <img src="https://via.placeholder.com/100x50?text=Cert+6" alt="Certificate" class="max-w-full h-auto">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
