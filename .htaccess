@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Remove index.html if not explicitly requested
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.html [QSA,L]
+
+    # Specific rule for /unsubscribe to redirect to unsubscribe.php
+    RewriteCond %{REQUEST_URI} ^/unsubscribe/?$ [NC]
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^unsubscribe/?$ unsubscribe.php [QSA,L]
+
+    # Allow direct access to .php files
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([^\.]+)$ $1.php [QSA,L]
+</IfModule>
+
+# Allow access to static files and directories
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Ensure .php files are served correctly
+<FilesMatch "\.php$">
+    Allow from all
+</FilesMatch>
