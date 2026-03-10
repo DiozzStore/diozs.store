@@ -27,41 +27,15 @@ if (isset($_GET['logout'])) {
     exit;
 }
 
-// Function to convert country code to flag emoji
-function countryCodeToFlag($countryCode) {
+// Function to get country flag image URL
+function getCountryFlagImage($countryCode) {
     if (empty($countryCode) || strlen($countryCode) !== 2) {
-        return '—';
+        return '';
     }
     
-    $countryCode = strtoupper($countryCode);
-    
-    // Convert country code to regional indicator symbols
-    $codePoints = [];
-    for ($i = 0; $i < 2; $i++) {
-        $codePoints[] = 0x1F1E6 + ord($countryCode[$i]) - ord('A');
-    }
-    
-    // Convert code points to UTF-8 emoji
-    $flag = '';
-    foreach ($codePoints as $codePoint) {
-        if ($codePoint <= 0x7F) {
-            $flag .= chr($codePoint);
-        } elseif ($codePoint <= 0x7FF) {
-            $flag .= chr(0xC0 | ($codePoint >> 6));
-            $flag .= chr(0x80 | ($codePoint & 0x3F));
-        } elseif ($codePoint <= 0xFFFF) {
-            $flag .= chr(0xE0 | ($codePoint >> 12));
-            $flag .= chr(0x80 | (($codePoint >> 6) & 0x3F));
-            $flag .= chr(0x80 | ($codePoint & 0x3F));
-        } else {
-            $flag .= chr(0xF0 | ($codePoint >> 18));
-            $flag .= chr(0x80 | (($codePoint >> 12) & 0x3F));
-            $flag .= chr(0x80 | (($codePoint >> 6) & 0x3F));
-            $flag .= chr(0x80 | ($codePoint & 0x3F));
-        }
-    }
-    
-    return $flag;
+    $countryCode = strtolower($countryCode);
+    // Using flagcdn.com for high-quality flag images
+    return 'https://flagcdn.com/w40/' . $countryCode . '.png';
 }
 
 // If not logged in, show login form
@@ -406,9 +380,23 @@ tbody tr:hover {
     background: #e8f0ff;
     padding: 6px 8px;
     border-radius: 3px;
-    font-weight: 600;
     text-align: center;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+}
+
+.country img {
+    width: 28px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+
+.country-code {
+    font-weight: 600;
+    font-size: 11px;
 }
 
 .language {
@@ -562,7 +550,7 @@ tbody tr:hover {
                         <th style="width: 4%;">SL No</th>
                         <th style="width: 18%;">Email</th>
                         <th style="width: 12%;">Phone</th>
-                        <th style="width: 8%;">Country</th>
+                        <th style="width: 10%;">Country</th>
                         <th style="width: 10%;">City</th>
                         <th style="width: 8%;">Language</th>
                         <th style="width: 14%;">IP Address</th>
@@ -577,7 +565,13 @@ tbody tr:hover {
                         <td style="text-align: center; font-weight: 600;"><?= $sl++ ?></td>
                         <td class="email"><?= htmlspecialchars($row['email']) ?></td>
                         <td><?= !empty($row['phone_number']) ? htmlspecialchars($row['phone_number']) : '—' ?></td>
-                        <td class="country" title="<?= htmlspecialchars($row['country_name']) ?>"><?= countryCodeToFlag($row['country']) ?> <?= htmlspecialchars($row['country']) ?></td>
+                        <td class="country" title="<?= htmlspecialchars($row['country_name']) ?>">
+                            <?php $flagUrl = getCountryFlagImage($row['country']); ?>
+                            <?php if ($flagUrl): ?>
+                                <img src="<?= $flagUrl ?>" alt="<?= htmlspecialchars($row['country']) ?>" onerror="this.style.display='none'">
+                            <?php endif; ?>
+                            <span class="country-code"><?= htmlspecialchars($row['country']) ?></span>
+                        </td>
                         <td><?= !empty($row['city']) ? htmlspecialchars($row['city']) : '—' ?></td>
                         <td class="language"><?= !empty($row['language']) ? strtoupper(htmlspecialchars($row['language'])) : '—' ?></td>
                         <td class="ip"><?= !empty($row['ip']) ? htmlspecialchars($row['ip']) : '—' ?></td>
