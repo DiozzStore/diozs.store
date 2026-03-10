@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unsubscribed • Dioz Group</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./Contactfotor.jpg');
+  background-size: contain; /* keeps full map visible */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: #333;
+}
+
+/* Dark overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.92);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  animation: fadeDown 0.6s ease-out;
+}
+
+@keyframes fadeDown {
+  from { opacity:0; transform: translateY(-40px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+.card img {
+  max-width: 110px;
+  margin-bottom: 10px;
+}
+
+.card h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #10b981;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  margin-bottom: 22px;
+  color: #666;
+  font-size: 14px;
+}
+
+a.button {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 34px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
+}
+
+a.button:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37,99,235,0.7);
+}
+
+/* ================= HELICOPTER ================= */
+
+/* Outside card */
+#helicopter-animation {
+  position: fixed;
+  top: 38%;
+  right: 8%;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Floating motion */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HELICOPTER OUTSIDE THE CARD -->
+<div id="helicopter-animation"></div>
+
+<div class="card">
+  <img src="https://dioz.com/wp-content/uploads/2024/07/logo.svg" alt="Dioz Logo">
+  <h1>You've been unsubscribed</h1>
+  <p>Your email has been successfully removed from our mailing list.</p>
+  <p class="subtitle">We're sorry to see you go.</p>
+  <a class="button" href="/">← Return to Home</a>
+</div>
+
+<script>
+lottie.loadAnimation({
+  container: document.getElementById('helicopter-animation'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'Helicopter.json'
+});
+</script>
+
+</body>
+</html>
