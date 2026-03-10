@@ -2,29 +2,29 @@
     RewriteEngine On
     RewriteBase /
 
-    # Remove index.html if not explicitly requested
+    # Don't rewrite if it's a real file or directory
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.html [QSA,L]
 
-    # Specific rule for /unsubscribe to redirect to unsubscribe.php
-    RewriteCond %{REQUEST_URI} ^/unsubscribe/?$ [NC]
-    RewriteCond %{REQUEST_FILENAME}.php -f
+    # Specific rule for /unsubscribe to unsubscribe.php
     RewriteRule ^unsubscribe/?$ unsubscribe.php [QSA,L]
 
-    # Allow direct access to .php files
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+    # Try to find .php file if no file exists
     RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^([^\.]+)$ $1.php [QSA,L]
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [QSA,L]
+
+    # Only redirect to index.html for non-PHP requests
+    RewriteCond %{REQUEST_FILENAME} !\.php$
+    RewriteCond %{REQUEST_URI} !^/[a-zA-Z0-9_.-]*\.php$
+    RewriteRule ^(.*)$ index.html [QSA,L]
 </IfModule>
 
-# Allow access to static files and directories
+# Cache static files
 <FilesMatch "\.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|otf|eot)$">
     Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
 
-# Ensure .php files are served correctly
+# Allow access to PHP files
 <FilesMatch "\.php$">
     Allow from all
 </FilesMatch>
