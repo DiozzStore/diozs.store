@@ -27,6 +27,43 @@ if (isset($_GET['logout'])) {
     exit;
 }
 
+// Function to convert country code to flag emoji
+function countryCodeToFlag($countryCode) {
+    if (empty($countryCode) || strlen($countryCode) !== 2) {
+        return '—';
+    }
+    
+    $countryCode = strtoupper($countryCode);
+    
+    // Convert country code to regional indicator symbols
+    $codePoints = [];
+    for ($i = 0; $i < 2; $i++) {
+        $codePoints[] = 0x1F1E6 + ord($countryCode[$i]) - ord('A');
+    }
+    
+    // Convert code points to UTF-8 emoji
+    $flag = '';
+    foreach ($codePoints as $codePoint) {
+        if ($codePoint <= 0x7F) {
+            $flag .= chr($codePoint);
+        } elseif ($codePoint <= 0x7FF) {
+            $flag .= chr(0xC0 | ($codePoint >> 6));
+            $flag .= chr(0x80 | ($codePoint & 0x3F));
+        } elseif ($codePoint <= 0xFFFF) {
+            $flag .= chr(0xE0 | ($codePoint >> 12));
+            $flag .= chr(0x80 | (($codePoint >> 6) & 0x3F));
+            $flag .= chr(0x80 | ($codePoint & 0x3F));
+        } else {
+            $flag .= chr(0xF0 | ($codePoint >> 18));
+            $flag .= chr(0x80 | (($codePoint >> 12) & 0x3F));
+            $flag .= chr(0x80 | (($codePoint >> 6) & 0x3F));
+            $flag .= chr(0x80 | ($codePoint & 0x3F));
+        }
+    }
+    
+    return $flag;
+}
+
 // If not logged in, show login form
 if (!$is_logged_in) {
     ?>
@@ -367,10 +404,11 @@ tbody tr:hover {
 
 .country {
     background: #e8f0ff;
-    padding: 3px 6px;
+    padding: 6px 8px;
     border-radius: 3px;
     font-weight: 600;
     text-align: center;
+    font-size: 16px;
 }
 
 .language {
@@ -385,6 +423,7 @@ tbody tr:hover {
     font-family: monospace;
     font-size: 11px;
     color: #666;
+    line-height: 1.4;
 }
 
 .external-id {
@@ -526,7 +565,7 @@ tbody tr:hover {
                         <th style="width: 8%;">Country</th>
                         <th style="width: 10%;">City</th>
                         <th style="width: 8%;">Language</th>
-                        <th style="width: 12%;">IP Address</th>
+                        <th style="width: 14%;">IP Address</th>
                         <th style="width: 10%;">Device</th>
                         <th style="width: 10%;">Browser</th>
                         <th style="width: 12%;">External ID</th>
@@ -538,7 +577,7 @@ tbody tr:hover {
                         <td style="text-align: center; font-weight: 600;"><?= $sl++ ?></td>
                         <td class="email"><?= htmlspecialchars($row['email']) ?></td>
                         <td><?= !empty($row['phone_number']) ? htmlspecialchars($row['phone_number']) : '—' ?></td>
-                        <td class="country"><?= !empty($row['country']) ? htmlspecialchars($row['country']) : (!empty($row['country_name']) ? htmlspecialchars(substr($row['country_name'], 0, 2)) : '—') ?></td>
+                        <td class="country" title="<?= htmlspecialchars($row['country_name']) ?>"><?= countryCodeToFlag($row['country']) ?> <?= htmlspecialchars($row['country']) ?></td>
                         <td><?= !empty($row['city']) ? htmlspecialchars($row['city']) : '—' ?></td>
                         <td class="language"><?= !empty($row['language']) ? strtoupper(htmlspecialchars($row['language'])) : '—' ?></td>
                         <td class="ip"><?= !empty($row['ip']) ? htmlspecialchars($row['ip']) : '—' ?></td>
