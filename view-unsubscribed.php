@@ -520,10 +520,11 @@ tbody tr:hover {
             <table>
                 <thead>
                     <tr>
+                        <th style="width: 4%;">SL No</th>
                         <th style="width: 18%;">Email</th>
                         <th style="width: 12%;">Phone</th>
-                        <th style="width: 6%;">Country</th>
-                        <th style="width: 12%;">City</th>
+                        <th style="width: 8%;">Country</th>
+                        <th style="width: 10%;">City</th>
                         <th style="width: 8%;">Language</th>
                         <th style="width: 12%;">IP Address</th>
                         <th style="width: 10%;">Device</th>
@@ -532,11 +533,12 @@ tbody tr:hover {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($rows as $row): ?>
+                    <?php $sl = 1; foreach ($rows as $row): ?>
                     <tr>
+                        <td style="text-align: center; font-weight: 600;"><?= $sl++ ?></td>
                         <td class="email"><?= htmlspecialchars($row['email']) ?></td>
                         <td><?= !empty($row['phone_number']) ? htmlspecialchars($row['phone_number']) : '—' ?></td>
-                        <td class="country"><?= !empty($row['country']) ? htmlspecialchars($row['country']) : '—' ?></td>
+                        <td class="country"><?= !empty($row['country']) ? htmlspecialchars($row['country']) : (!empty($row['country_name']) ? htmlspecialchars(substr($row['country_name'], 0, 2)) : '—') ?></td>
                         <td><?= !empty($row['city']) ? htmlspecialchars($row['city']) : '—' ?></td>
                         <td class="language"><?= !empty($row['language']) ? strtoupper(htmlspecialchars($row['language'])) : '—' ?></td>
                         <td class="ip"><?= !empty($row['ip']) ? htmlspecialchars($row['ip']) : '—' ?></td>
