@@ -236,7 +236,7 @@
 </div>
 
 <script>
-// Get IP from your server + country from browser geolocation
+// Get IP and country using IP geolocation API
 async function getIPAndCountry() {
     let ipData = {
         ip: '',
@@ -245,16 +245,34 @@ async function getIPAndCountry() {
         city: '',
     };
     
-    // Get IP from server
+    // Method 1: Use free IP geolocation API (ipapi.co)
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        if (response.ok) {
+            const data = await response.json();
+            
+            if (data.ip) ipData.ip = data.ip;
+            if (data.country_code) ipData.country = data.country_code;
+            if (data.country_name) ipData.country_name = data.country_name;
+            if (data.city) ipData.city = data.city;
+            
+            console.log('✓ Geolocation from IP successful:', ipData);
+            return ipData; // Return early if successful
+        }
+    } catch (err) {
+        console.error('Could not get geolocation from ipapi.co:', err);
+    }
+    
+    // Method 2: Fallback to server-side IP detection
     try {
         const response = await fetch('get-ip.php');
         const data = await response.json();
-        ipData.ip = data.ip || '';
+        if (data.ip) ipData.ip = data.ip;
     } catch (err) {
-        console.error('Could not get IP:', err);
+        console.error('Could not get IP from server:', err);
     }
     
-    // Try to get country from timezone
+    // Method 3: Fallback to timezone-based country mapping
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const tzCountryMap = {
         'America/New_York': { code: 'US', name: 'United States', city: 'New York' },
@@ -269,6 +287,8 @@ async function getIPAndCountry() {
         'Australia/Sydney': { code: 'AU', name: 'Australia', city: 'Sydney' },
         'Asia/Shanghai': { code: 'CN', name: 'China', city: 'Shanghai' },
         'Asia/Bangkok': { code: 'TH', name: 'Thailand', city: 'Bangkok' },
+        'Asia/Karachi': { code: 'PK', name: 'Pakistan', city: 'Karachi' },
+        'Asia/Dhaka': { code: 'BD', name: 'Bangladesh', city: 'Dhaka' },
     };
     
     if (tzCountryMap[tz]) {
@@ -277,6 +297,7 @@ async function getIPAndCountry() {
         ipData.city = tzCountryMap[tz].city;
     }
     
+    console.log('✓ Geolocation from timezone fallback:', ipData);
     return ipData;
 }
 
