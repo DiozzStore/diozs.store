@@ -1,16 +1,18 @@
 <?php
 // public_html/db-config.php
-// Minimal, secure DB config — include this from other scripts.
+// Secure DB config using environment variables
 
-$DB_HOST = 'localhost';
-$DB_NAME = 'a1761528_diozs';
-$DB_USER = 'a1761528_diozs';        // If you created a different user (e.g. a1761528_diozsuser), use that exact name.
-$DB_PASS = 'R-rkNGPiKq{k';     // <<-- change this
+// Load from environment variables (set on Render.com or .env)
+$DB_HOST = getenv('DB_HOST') ?: 'localhost';
+$DB_NAME = getenv('DB_NAME') ?: 'a1761528_diozs';
+$DB_USER = getenv('DB_USER') ?: 'a1761528_diozs';
+$DB_PASS = getenv('DB_PASS') ?: '';
+$DB_PORT = getenv('DB_PORT') ?: '3306';
 
 // Use PDO (recommended)
 try {
     $pdo = new PDO(
-        "mysql:host={$DB_HOST};dbname={$DB_NAME};charset=utf8mb4",
+        "mysql:host={$DB_HOST};port={$DB_PORT};dbname={$DB_NAME};charset=utf8mb4",
         $DB_USER,
         $DB_PASS,
         [
