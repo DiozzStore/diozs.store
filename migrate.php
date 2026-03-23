@@ -1,10 +1,10 @@
 <?php
-// Database connection
-$host = getenv('DB_HOST') ?: 'centerbeam.proxy.rlwy.net';
-$port = getenv('DB_PORT') ?: 29134;
-$user = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASSWORD') ?: 'rrQdhfcRK1RwIGZUvpADAbCzoiCABBjj';
-$database = getenv('DB_NAME') ?: 'railway';
+// Get environment variables from Railway
+$host = getenv('MYSQL_HOST') ?: 'mysql.railway.internal';
+$port = getenv('MYSQL_PORT') ?: 3306;
+$user = getenv('MYSQL_USER') ?: 'root';
+$password = getenv('MYSQL_PASSWORD') ?: 'rrQdhfcRK1RwIGZUvpADAbCzoiCABBjj';
+$database = getenv('MYSQL_DATABASE') ?: 'railway';
 
 $conn = new mysqli($host, $user, $password, $database, $port);
 
@@ -50,4 +50,3 @@ echo "<br><a href='view-unsubscribed.php'>View all unsubscribed</a>";
 
 $conn->close();
 ?>
-
