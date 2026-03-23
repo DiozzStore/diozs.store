@@ -6,10 +6,11 @@ $user = getenv('MYSQL_USER') ?: 'root';
 $password = getenv('MYSQL_PASSWORD') ?: 'rrQdhfcRK1RwIGZUvpADAbCzoiCABBjj';
 $database = getenv('MYSQL_DATABASE') ?: 'railway';
 
-$conn = new mysqli($host, $user, $password, $database, $port);
+// Using mysqli_connect instead of new mysqli()
+$conn = mysqli_connect($host, $user, $password, $database, $port);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 $migrated = 0;
@@ -28,15 +29,12 @@ foreach ($csv_files as $file) {
     while (($line = fgets($handle)) !== false) {
         $email = trim($line);
         if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $stmt = $conn->prepare("INSERT IGNORE INTO unsubscribed (email, country, phone) VALUES (?, 'Unknown', '')");
-            if ($stmt) {
-                $stmt->bind_param('s', $email);
-                if ($stmt->execute()) {
-                    $migrated++;
-                } else {
-                    $errors++;
-                }
-                $stmt->close();
+            $email_escaped = mysqli_real_escape_string($conn, $email);
+            $query = "INSERT IGNORE INTO unsubscribed (email, country, phone) VALUES ('$email_escaped', 'Unknown', '')";
+            if (mysqli_query($conn, $query)) {
+                $migrated++;
+            } else {
+                $errors++;
             }
         }
     }
@@ -48,5 +46,5 @@ echo "Records migrated: $migrated<br>";
 echo "Errors: $errors<br>";
 echo "<br><a href='view-unsubscribed.php'>View all unsubscribed</a>";
 
-$conn->close();
+mysqli_close($conn);
 ?>
