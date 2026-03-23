@@ -281,269 +281,167 @@
   </div>
 </section>
 
-  <section class="dgHome-portfolio dgHome-py in--view">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="dgHome-heading dgHome-heading__shine text-center">
-          <h2>Our Portfolio</h2>
+<!-- Portfolio Section with Inline CSS -->
+<section style="padding: 60px 20px; background: #f9f9f9;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <!-- Section Title -->
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h2 style="font-size: 42px; color: #d32f2f; margin-bottom: 10px; font-weight: bold;">Our Portfolio</h2>
+      <p style="color: #666; font-size: 16px;">Explore our diverse range of manufacturing and sourcing expertise across multiple industries and product categories.</p>
+    </div>
+
+    <!-- Portfolio Container -->
+    <div style="display: flex; gap: 30px;">
+      
+      <!-- Left Sidebar - Categories -->
+      <div style="width: 200px; flex-shrink: 0;">
+        <!-- Textile Category -->
+        <div style="margin-bottom: 40px;">
+          <h3 style="font-size: 18px; color: #d32f2f; font-weight: bold; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 24px;">🏭</span> TEXTILE
+          </h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button onclick="document.getElementById('textile-fashion').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #333; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Fashion</button>
+            <button onclick="document.getElementById('textile-sports').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #333; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Sports</button>
+            <button onclick="document.getElementById('textile-essentials').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #333; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Essentials</button>
+            <button onclick="document.getElementById('textile-private').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #333; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Private Label</button>
+            <button onclick="document.getElementById('textile-fitness').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #333; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Fitness</button>
+            <button onclick="document.getElementById('textile-uniform').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #333; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Uniform</button>
+          </div>
+        </div>
+
+        <!-- Health Category -->
+        <div>
+          <h3 style="font-size: 18px; color: #d32f2f; font-weight: bold; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 24px;">🏥</span> HEALTH
+          </h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button onclick="document.getElementById('health-equipment').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Equipment</button>
+            <button onclick="document.getElementById('health-supplies').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Supplies</button>
+            <button onclick="document.getElementById('health-uniform').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Uniform</button>
+            <button onclick="document.getElementById('health-oxygen').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Oxygen</button>
+            <button onclick="document.getElementById('health-xray').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">X-Ray</button>
+            <button onclick="document.getElementById('health-more').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">More</button>
+          </div>
         </div>
       </div>
-      <div class="col-lg-12">
-        <div class="dgHome-portfolio__wrap dgHome-portfolio__tabs__wrap">
-          <div class="nav nav-pills dgHome-portfolio__nav" id="dgHome-portfolio__pills-tab" role="tablist" aria-orientation="vertical">
-            <div class="dgHome-portfolio__nav-tab d-flex flex-column">
-                                          <div class="nav-link active" id="dgHome-portfolio__1-s-tab" data-bs-toggle="pill" data-bs-target="#dgHome-portfolio__1-s" type="button" role="tab" aria-controls="dgHome-portfolio__1-s" aria-selected="true">
-                <div class="title">
-                                    
-                  <img src="https://dioz.com/wp-content/uploads/2024/07/factory-1-1.png" alt="">
-                  <h5>Textile</h5>
-                </div>
-                <ul class="thumb__wrap d-flex flex-wrap">
-                                                      <li>
-                    <a href="https://dioz.com/apparel/fashion" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/portfolio-thumb-fashion.jpg" alt="">
-                      <h5>Fashion</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://dioz.com/apparel/sports" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/portfolio-thumb-sports.jpg" alt="">
-                      <h5>Sports</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://dioz.com/apparel/essentials" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/portfolio-thumb-accessories.webp" alt="">
-                      <h5>Essentials</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://dioz.com/apparel/private-label" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/portfolio-thumb-factory.jpg" alt="">
-                      <h5>Private Label</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://dioz.com/apparel/fitness" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/portfolio-thumb-fitness.jpg" alt="">
-                      <h5>Fitness</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://dioz.com/apparel/uniform" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/portfolio-thumb-uniform.jpg" alt="">
-                      <h5>Uniform</h5>
-                    </a>
-                  </li>
-                                                    </ul>
-              </div>
-                            <div class="nav-link " id="dgHome-portfolio__2-s-tab" data-bs-toggle="pill" data-bs-target="#dgHome-portfolio__2-s" type="button" role="tab" aria-controls="dgHome-portfolio__2-s" aria-selected="false" tabindex="-1">
-                <div class="title">
-                                    
-                  <img src="https://dioz.com/wp-content/uploads/2024/07/health-insurance-1-1.png" alt="">
-                  <h5>Health</h5>
-                </div>
-                <ul class="thumb__wrap d-flex flex-wrap">
-                                                      <li>
-                    <a href="https://www.8health.com/product-category/equipment/" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/hospital-equipment-surgical-procedure1.jpg" alt="">
-                      <h5>Hospital Equipment</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://www.8health.com/product-category/ventilator/" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/set-diverse-medical-items-means-prevention-personal-hygiene-treatment-symptoms-coronavirus1.jpg" alt="">
-                      <h5>Medical Supplies</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://www.8health.com/product-category/uniform/" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/female-doctor-with-stethoscope-standing-gray.webp" alt="">
-                      <h5>Medical Uniform</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://www.8health.com/product-category/oxygen-machine/" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/mechanical-ventilation-equipment-pneumonia-diagnosting-ventilation-lungs-with-oxygen-covid19-coronavirus-identification-pandemic_344188-235.webp" alt="">
-                      <h5>Oxygen Machine</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://www.8health.com/product-category/x-ray-machines/" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/blue-modern-operating-room-with-x-ray-medical-scan-operating-table-with-special-lamp-medical-devices-research-medical-diagnosis-health-care-technology-concept1.jpg" alt="">
-                      <h5>X Ray Machines</h5>
-                    </a>
-                  </li>
-                                    <li>
-                    <a href="https://www.8health.com/products/" target="_blank">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/dzHome-portfolio-hospital.jpg" alt="">
-                      <h5>More Categories</h5>
-                    </a>
-                  </li>
-                                                    </ul>
-              </div>
-                                        </div>
-          </div>
-          <div class="tab-content dgHome-portfolio__content" id="dgHome-portfolio__pills-tabContent">
-                                    <div class="tab-pane fade show active" id="dgHome-portfolio__1-s" role="tabpanel" aria-labelledby="dgHome-portfolio__1-s-tab">
-              <div class="dgHome-portfolio__grid">
-                                                <div class="item item-0">
-                  <a class="dgHome-portfolio__single" href="https://dioz.com/apparel/fashion" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/dzHome-portfolio-fashion.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Fashion</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-1">
-                  <a class="dgHome-portfolio__single" href="https://dioz.com/apparel/sports" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/dzHome-portfolio-sports.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Sports</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-2">
-                  <a class="dgHome-portfolio__single" href="https://dioz.com/apparel/essentials" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/07/dioz-home-essentials.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Essentials</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-3">
-                  <a class="dgHome-portfolio__single" href="https://dioz.com/apparel/private-label" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/dzHome-portfolio-factory.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Private Label</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-4">
-                  <a class="dgHome-portfolio__single" href="https://dioz.com/apparel/fitness" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/dzHome-portfolio-fitness.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Fitness</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-5">
-                  <a class="dgHome-portfolio__single" href="https://dioz.com/apparel/uniform" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/07/uniform-tab-dioz.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Uniform</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                              </div>
+
+      <!-- Right Side - Portfolio Grid -->
+      <div style="flex: 1;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          
+          <!-- Fashion -->
+          <a id="textile-fashion" href="https://dioz.com/apparel/fashion" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ffd54f, #ffb74d); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">👗</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Fashion</div>
             </div>
-                        <div class="tab-pane fade " id="dgHome-portfolio__2-s" role="tabpanel" aria-labelledby="dgHome-portfolio__2-s-tab">
-              <div class="dgHome-portfolio__grid">
-                                                <div class="item item-0">
-                  <a class="dgHome-portfolio__single" href="https://www.8health.com/product-category/equipment/" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/hospital-equipment-surgical-procedure1.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Hospital Equipment</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-1">
-                  <a class="dgHome-portfolio__single" href="https://www.8health.com/product-category/ventilator/" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/set-diverse-medical-items-means-prevention-personal-hygiene-treatment-symptoms-coronavirus1.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Medical Supplies</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-2">
-                  <a class="dgHome-portfolio__single" href="https://www.8health.com/product-category/uniform/" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/female-doctor-with-stethoscope-standing-gray.webp" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Medical Uniform</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-3">
-                  <a class="dgHome-portfolio__single" href="https://www.8health.com/product-category/oxygen-machine/" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/mechanical-ventilation-equipment-pneumonia-diagnosting-ventilation-lungs-with-oxygen-covid19-coronavirus-identification-pandemic_344188-235.webp" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>Oxygen Machine</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-4">
-                  <a class="dgHome-portfolio__single" href="https://www.8health.com/product-category/x-ray-machines/" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2025/01/blue-modern-operating-room-with-x-ray-medical-scan-operating-table-with-special-lamp-medical-devices-research-medical-diagnosis-health-care-technology-concept1.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>X Ray Machines</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                <div class="item item-5">
-                  <a class="dgHome-portfolio__single" href="https://www.8health.com/products/" target="_blank">
-                    <div class="img-part">
-                                            <img src="https://dioz.com/wp-content/uploads/2024/06/dzHome-portfolio-hospital.jpg" alt="">
-                    </div>
-                    <div class="content-part">
-                      <div class="title">
-                        <h4>More Categories</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                                              </div>
+          </a>
+
+          <!-- Sports -->
+          <a id="textile-sports" href="https://dioz.com/apparel/sports" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #42a5f5, #2196f3); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">⛹️</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Sports</div>
             </div>
-                                  </div>
+          </a>
+
+          <!-- Essentials -->
+          <a id="textile-essentials" href="https://dioz.com/apparel/essentials" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #81c784, #66bb6a); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">🎒</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Essentials</div>
+            </div>
+          </a>
+
+          <!-- Private Label -->
+          <a id="textile-private" href="https://dioz.com/apparel/private-label" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #9e9e9e, #757575); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">🏷️</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Private Label</div>
+            </div>
+          </a>
+
+          <!-- Fitness -->
+          <a id="textile-fitness" href="https://dioz.com/apparel/fitness" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ef5350, #e53935); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">💪</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Fitness</div>
+            </div>
+          </a>
+
+          <!-- Uniform -->
+          <a id="textile-uniform" href="https://dioz.com/apparel/uniform" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #9575cd, #7e57c2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">👔</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Uniform</div>
+            </div>
+          </a>
+
+          <!-- Hospital Equipment -->
+          <a id="health-equipment" href="https://www.8health.com/product-category/equipment/" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #0277bd, #01579b); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">🏥</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Equipment</div>
+            </div>
+          </a>
+
+          <!-- Medical Supplies -->
+          <a id="health-supplies" href="https://www.8health.com/product-category/ventilator/" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1565c0, #0d47a1); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">💊</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Supplies</div>
+            </div>
+          </a>
+
+          <!-- Medical Uniform -->
+          <a id="health-uniform" href="https://www.8health.com/product-category/uniform/" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #00838f, #004d40); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">👨‍⚕️</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Medical Uniform</div>
+            </div>
+          </a>
+
+          <!-- Oxygen Machine -->
+          <a id="health-oxygen" href="https://www.8health.com/product-category/oxygen-machine/" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #00897b, #004d40); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">💨</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">Oxygen Machine</div>
+            </div>
+          </a>
+
+          <!-- X-Ray Machines -->
+          <a id="health-xray" href="https://www.8health.com/product-category/x-ray-machines/" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #455a64, #263238); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">📷</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">X-Ray Machines</div>
+            </div>
+          </a>
+
+          <!-- More Categories -->
+          <a id="health-more" href="https://www.8health.com/products/" target="_blank" style="text-decoration: none; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s; position: relative; aspect-ratio: 1;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #37474f, #1a237e); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="font-size: 60px;">➕</div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px;">More Categories</div>
+            </div>
+          </a>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  a[style*="aspect-ratio"] {
+    transition: transform 0.3s ease;
+  }
+  a[style*="aspect-ratio"]:hover {
+    transform: translateY(-5px);
+  }
+</style>
+
+  
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
