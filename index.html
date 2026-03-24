@@ -414,10 +414,17 @@
             <span style="font-size: 24px;">🏥</span> HEALTH
           </h3>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <div onclick="document.getElementById('health-equipment').scrollIntoView({behavior: 'smooth'})"
-       class="side-card">
-    <img src="equipment.jpg">
-    <span>Equipment</span>
+             <!-- Equipment -->
+  <div onclick="document.getElementById('health-equipment').scrollIntoView({behavior: 'smooth'})"
+       style="height: 60px; border-radius: 8px; overflow: hidden; cursor: pointer; position: relative;">
+    
+    <img src="equipment.jpg" style="width:100%; height:100%; object-fit:cover;">
+    
+    <div style="position:absolute; inset:0; background:rgba(0,75,135,0.6);"></div>
+
+    <span style="position:absolute; color:white; font-size:12px; font-weight:bold; top:50%; left:50%; transform:translate(-50%,-50%);">
+      Equipment
+    </span>
   </div>
             <button onclick="document.getElementById('health-supplies').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Supplies</button>
             <button onclick="document.getElementById('health-uniform').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Uniform</button>
