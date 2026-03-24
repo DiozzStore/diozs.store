@@ -414,7 +414,11 @@
             <span style="font-size: 24px;">🏥</span> HEALTH
           </h3>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <button onclick="document.getElementById('health-equipment').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Equipment</button>
+            <div onclick="document.getElementById('health-equipment').scrollIntoView({behavior: 'smooth'})"
+       class="side-card">
+    <img src="equipment.jpg">
+    <span>Equipment</span>
+  </div>
             <button onclick="document.getElementById('health-supplies').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Supplies</button>
             <button onclick="document.getElementById('health-uniform').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Uniform</button>
             <button onclick="document.getElementById('health-oxygen').scrollIntoView({behavior: 'smooth'})" style="padding: 12px; background: #004b87; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Oxygen</button>
