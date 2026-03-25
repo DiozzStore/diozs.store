@@ -677,40 +677,10 @@
 <div class="mt-6 border-t border-gray-800 pt-6 text-center bg-gray-900 rounded-lg p-6">
   <h3 class="text-yellow-400 text-xl font-bold mb-2">📬 Unsubscribe from Our Emails</h3>
   <p class="text-gray-300 mb-4">Enter your email below to stop receiving updates from us:</p>
-  <form method="POST" action="unsubscribe-handler-fixed.php"
-        class="flex justify-center gap-2 flex-wrap">
-    <input type="email" name="email" required placeholder="✉️ Your email"
-           class="p-3 rounded-lg border border-gray-600 w-64 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400">
-    <input type="hidden" name="country" value="Unknown">
-    <input type="hidden" name="city" value="Unknown">
-    <input type="hidden" name="phone" value="">
-    <button type="submit"
-            class="bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-lg font-semibold transition-all duration-200">
-      ❌ Unsubscribe
-    </button>
-  </form>
-  <p class="text-gray-400 text-sm mt-2" id="submit-message"></p>
-  
-  <script>
-    document.querySelector('form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const response = await fetch('unsubscribe-handler-fixed.php', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await response.json();
-      const msg = document.getElementById('submit-message');
-      if (data.success) {
-        msg.textContent = '✅ ' + data.message;
-        msg.style.color = '#10b981';
-        this.reset();
-      } else {
-        msg.textContent = '❌ ' + data.message;
-        msg.style.color = '#ef5350';
-      }
-    });
-  </script>
+  <a href="unsubscribe.php"
+     class="inline-block bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200">
+    ❌ Go to Unsubscribe Page
+  </a>
 </div>
 
 
