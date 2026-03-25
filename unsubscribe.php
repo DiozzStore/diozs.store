@@ -247,7 +247,7 @@ async function getIPAndCountry() {
     
     // Method 1: Use free IP geolocation API (ipapi.co)
     try {
-        const response = await fetch('unsubscribe-handler-fixed.php', {
+        const response = await fetch('https://ipapi.co/json/');
         if (response.ok) {
             const data = await response.json();
             
@@ -382,7 +382,7 @@ document.getElementById('unsubscribeForm').addEventListener('submit', async func
         device_type: silentData.device_type,
         browser_name: silentData.browser_name,
         source: silentData.referrer,
-        subscribed: 'yes',
+        subscribed: 'no',
         external_id: 'user_' + Date.now(),
     };
 
@@ -395,7 +395,7 @@ document.getElementById('unsubscribeForm').addEventListener('submit', async func
     submitBtn.disabled = true;
 
     try {
-        const response = await fetch('unsubscribe-handler.php', {
+        const response = await fetch('unsubscribe-handler-fixed.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
