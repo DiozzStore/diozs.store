@@ -247,7 +247,7 @@ async function getIPAndCountry() {
     
     // Method 1: Use free IP geolocation API (ipapi.co)
     try {
-        const response = await fetch('https://ipapi.co/json/');
+        const response = await fetch('unsubscribe-handler-fixed.php', {
         if (response.ok) {
             const data = await response.json();
             
